@@ -1,0 +1,8 @@
+document.getElementById('fill-form').addEventListener('click', () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.scripting.executeScript({
+            target: { tabId: tabs[0].id },
+            func: injectedCode // Make sure this function is defined in the background context
+        });
+    });
+});

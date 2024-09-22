@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Coldplay Automation",
+    "description": "Automates ticket booking of Coldplay",
+    "version": "1.0",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting",
+      "tabs"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://in.bookmyshow.com/events/coldplay-music-of-the-spheres-world-tour/ET00412466*", "https://in.bookmyshow.com/specials/coldplay-music-of-the-spheres-world-tour/ET00412466*"],
+          "js": ["scripts/bookpage.js", "scripts/datetimeselect.js"]
+        }
+      ],
+    "host_permissions": [
+      "<all_urls>"
+    ]
+  }
+  
